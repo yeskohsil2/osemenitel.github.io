@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>великий осеменитель</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .photo-container {
+            position: relative;
+            width: 100%;
+            height: 576px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+        }
+
+        .photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .photo:hover {
+            transform: scale(1.05);
+        }
+
+        .animated-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+            padding: 20px;
+            z-index: 10;
+        }
+
+        .main-title {
+            font-size: 4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            animation: colorChange 5s infinite alternate, glow 2s infinite alternate;
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: fadeInOut 3s infinite alternate;
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: #ff5e7d;
+            }
+            20% {
+                color: #ff8a00;
+            }
+            40% {
+                color: #ffe600;
+            }
+            60% {
+                color: #4deeea;
+            }
+            80% {
+                color: #6a67ce;
+            }
+            100% {
+                color: #ff5e7d;
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6);
+            }
+        }
+
+        @keyframes fadeInOut {
+            from {
+                opacity: 0.7;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .content {
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            margin-top: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #4deeea;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .photo-container {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .photo-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="photo-container">
+            <!-- ЗДЕСЬ ЗАМЕНИТЕ НАЗВАНИЕ ФАЙЛА НА СВОЁ -->
+            <img src="1760896215294.jpg" alt="Описание фото" class="photo">
+            <div class="animated-text">
+                <h1 class="main-title">Когда словил передоз</h1>
+            </div>
+        </div>
+        
+        <div class="content">
+            <h2>О нашем проекте</h2>
+            <p>Мы лечим людей от бешенства.</p>
+            <p>На фотографии показан дикий и бешенный пёс номер #771.</p>
+            <p>Этому осеменителю собак и деревьев более 12 лет и он все еще живет...</p>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Анимированный влад. Все права защищены.</p>
+        </div>
+    </div>
+</body>
+</html>
