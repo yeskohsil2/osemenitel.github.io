@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>великий осеменитель | 67 inside</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,800;14..32,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -20,6 +20,7 @@
             line-height: 1.4;
         }
 
+        /* Зернистость */
         body::before {
             content: "";
             position: fixed;
@@ -42,7 +43,28 @@
             z-index: 2;
         }
 
-        /* SVG Gallery 67 */
+        /* Стиль для GIF-шапки */
+        .gif-header {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            border-radius: 48px;
+            overflow: hidden;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.7), 0 0 0 2px rgba(255,51,102,0.3);
+            transition: 0.3s;
+        }
+        .gif-header img {
+            width: 100%;
+            max-height: 160px;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+        .gif-header:hover {
+            transform: scale(1.01);
+            box-shadow: 0 25px 40px -12px #ff3366;
+        }
+
+        /* SVG галерея 67 */
         .svg-gallery {
             display: flex;
             justify-content: center;
@@ -62,8 +84,9 @@
             border-radius: 40px;
             transition: 0.3s;
             border: 1px solid #ff3366;
+            cursor: pointer;
         }
-        .svg-card:hover { transform: scale(1.05); background: #ff336622; }
+        .svg-card:hover { transform: scale(1.05); background: #ff336622; box-shadow: 0 0 15px #ff3366; }
 
         .photo-container {
             position: relative;
@@ -237,11 +260,17 @@
             .photo-container { height: 400px; }
             .content h2 { font-size: 1.8rem; }
             .content p { font-size: 0.95rem; }
+            .gif-header img { max-height: 100px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- ГИФКА ШАПКА 67 -->
+        <div class="gif-header">
+            <img src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyeWhjNWFsenM0YTAwN3B3cGZ5ZGlyeWhicDJ1Zm1kcG9kbWQzZ2hxcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dwcFlb2ovRF3amTpCi/giphy.webp" alt="67 анимация">
+        </div>
+
         <!-- ГАЛЕРЕЯ SVG 67 МЕМОВ -->
         <div class="svg-gallery">
             <div class="svg-card">
@@ -278,6 +307,7 @@
             </div>
         </div>
 
+        <!-- ФОТОКОНТЕЙНЕР С ОСНОВНЫМ ИЗОБРАЖЕНИЕМ -->
         <div class="photo-container">
             <img src="1760896215294.jpg" alt="великий осеменитель" class="photo" onerror="this.src='https://placehold.co/1200x800/1a1a2e/ff3366?text=67+MEME'">
             <div class="animated-text">
@@ -290,6 +320,7 @@
             </div>
         </div>
         
+        <!-- КОНТЕНТ КАК НА ПЕРВОМ САЙТЕ -->
         <div class="content">
             <h2>🧠 АРХИВЫ БЕШЕНСТВА 6️⃣7️⃣</h2>
             <p>МЫ ЛЕЧИМ ЛЮДЕЙ ОТ БЕШЕНСТВА — РЕЖИМ 67</p>
@@ -299,7 +330,7 @@
             <p>ПЕРЕДОЗИРОВКА 67 — ХАОС В КАЖДОЙ КЛЕТКЕ 🔥</p>
         </div>
 
-        <!-- ДОПОЛНИТЕЛЬНЫЙ БЛОК С КРУПНЫМИ SVG 67 -->
+        <!-- БЛОК С КРУПНЫМИ SVG 67 -->
         <div style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin: 35px 0;">
             <svg width="130" height="130" viewBox="0 0 200 200">
                 <rect width="200" height="200" fill="#0d0212" rx="30" stroke="#ff3366" stroke-width="5"/>
@@ -316,12 +347,13 @@
             </svg>
         </div>
 
-        <!-- БЕГУЩАЯ СТРОКА 67 -->
+        <!-- БЕГУЩАЯ СТРОКА С МЕМАМИ -->
         <div class="marquee-67">
             <span>💀 67 — СИКС СЕВЕН — ПЕРЕДОЗ — КОРОЛЁВ ВЛАД — ОСЕМЕНИТЕЛЬ №771 — 67 БЕШЕНСТВО — 67 ХАОС 💀 &nbsp;&nbsp;&nbsp;⚡67⚡67⚡67⚡67⚡&nbsp;&nbsp;&nbsp;</span>
             <span>💀 67 — СИКС СЕВЕН — ПЕРЕДОЗ — КОРОЛЁВ ВЛАД — ОСЕМЕНИТЕЛЬ №771 — 67 БЕШЕНСТВО — 67 ХАОС 💀 &nbsp;&nbsp;&nbsp;⚡67⚡67⚡67⚡67⚡&nbsp;&nbsp;&nbsp;</span>
         </div>
 
+        <!-- ФУТЕР -->
         <div class="footer">
             <svg width="160" height="40" viewBox="0 0 300 40" style="margin: 0 auto 10px;">
                 <text x="15" y="30" fill="#ff6699" font-size="24" font-weight="bold">© 2026 АНИМИРОВАННЫЙ ВЛАД</text>
