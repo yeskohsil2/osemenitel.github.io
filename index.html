@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>великий осеменитель | 67 inside</title>
-    <!-- Подключаем шрифты Google Fonts для более современного вида -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,800;14..32,900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -21,7 +20,6 @@
             line-height: 1.4;
         }
 
-        /* Декоративный шум / зернистость для атмосферы */
         body::before {
             content: "";
             position: fixed;
@@ -44,17 +42,29 @@
             z-index: 2;
         }
 
-        /* Современный стеклянный эффект для карточек */
-        .glass-card {
-            background: rgba(15, 20, 35, 0.55);
-            backdrop-filter: blur(16px);
-            border-radius: 32px;
-            border: 1px solid rgba(77, 238, 234, 0.25);
-            box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        /* SVG Gallery 67 */
+        .svg-gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(0,0,0,0.4);
+            border-radius: 60px;
+            backdrop-filter: blur(8px);
+            border: 1px solid #ff5e7d66;
         }
 
-        /* Фото-контейнер с кинематографичным подходом */
+        .svg-card {
+            background: #0a0a1a;
+            padding: 12px 18px;
+            border-radius: 40px;
+            transition: 0.3s;
+            border: 1px solid #ff3366;
+        }
+        .svg-card:hover { transform: scale(1.05); background: #ff336622; }
+
         .photo-container {
             position: relative;
             width: 100%;
@@ -84,7 +94,6 @@
             filter: brightness(0.95) contrast(1.1);
         }
 
-        /* Текст поверх фото - более драматично */
         .animated-text {
             position: absolute;
             top: 50%;
@@ -93,7 +102,7 @@
             text-align: center;
             width: 90%;
             z-index: 15;
-            background: radial-gradient(ellipse at center, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.2) 80%);
+            background: radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.3) 80%);
             padding: 1.6rem 2rem;
             border-radius: 60px;
             backdrop-filter: blur(4px);
@@ -101,7 +110,7 @@
         }
 
         .main-title {
-            font-size: 5rem;
+            font-size: 4.5rem;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 6px;
@@ -112,20 +121,6 @@
             background-clip: text;
             color: transparent;
             animation: gradientFlow 6s ease infinite, textGlow 2.2s infinite alternate;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        }
-
-        /* Дополнительный безумный слоган под заголовком */
-        .main-title + .badge-67 {
-            display: inline-block;
-            background: #ff3366cc;
-            padding: 0.2rem 1rem;
-            border-radius: 40px;
-            font-size: 1.2rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            backdrop-filter: blur(8px);
-            margin-top: 8px;
         }
 
         .subtitle {
@@ -138,7 +133,6 @@
             text-shadow: 0 0 8px #4deeea80;
         }
 
-        /* Ключевые кадры */
         @keyframes gradientFlow {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -155,16 +149,14 @@
             to { opacity: 1; text-shadow: 0 0 12px #4deeea, 0 0 4px #fff; }
         }
 
-        /* Секция контента — карточка с кислотной обводкой */
         .content {
             padding: 40px 44px;
             margin-top: 24px;
-            background: rgba(8, 12, 25, 0.65);
+            background: rgba(8, 12, 25, 0.75);
             backdrop-filter: blur(20px);
             border-radius: 38px;
-            border: 1px solid rgba(77, 238, 234, 0.35);
+            border: 1px solid rgba(77, 238, 234, 0.45);
             transition: all 0.3s;
-            box-shadow: 0 20px 35px -15px rgba(0,0,0,0.5);
         }
 
         .content:hover {
@@ -180,7 +172,6 @@
             background-clip: text;
             color: transparent;
             margin-bottom: 28px;
-            letter-spacing: -0.5px;
             border-left: 6px solid #4deeea;
             padding-left: 24px;
         }
@@ -189,96 +180,160 @@
             font-size: 1.2rem;
             line-height: 1.65;
             margin-bottom: 20px;
-            font-weight: 400;
             color: #eef2ffdd;
-            transition: 0.2s;
             display: flex;
             align-items: center;
             gap: 12px;
             flex-wrap: wrap;
         }
 
-        /* Индивидуальные иконки для абзацев — добавляем вайб */
         .content p::before {
             content: "⚡";
             font-size: 1.6rem;
             filter: drop-shadow(0 0 3px #ff5e7d);
         }
-
-        .content p:nth-child(2)::before { content: "🐕‍🦺"; }
-        .content p:nth-child(3)::before { content: "🧠"; }
-        .content p:nth-child(4)::before { content: "🌳💦"; }
+        .content p:nth-child(2)::before { content: "🐕‍🦺67"; }
+        .content p:nth-child(3)::before { content: "🧠67"; }
+        .content p:nth-child(4)::before { content: "🌳💦67"; }
         .content p:nth-child(5)::before { content: "📟 6️⃣7️⃣"; }
-        .content p:last-child::before { content: "👑"; }
+        .content p:last-child::before { content: "👑67"; }
 
-        /* Футер с анимированной линией */
+        /* Бегущая строка 67 */
+        .marquee-67 {
+            background: #0a0a1aaa;
+            border-radius: 50px;
+            padding: 14px 0;
+            margin: 30px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            border: 1px solid #ff5e7d;
+        }
+        .marquee-67 span {
+            display: inline-block;
+            padding-left: 20px;
+            animation: scroll67 16s linear infinite;
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            color: #ffcc77;
+        }
+        @keyframes scroll67 {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+
         .footer {
             text-align: center;
             padding: 32px 20px 24px;
             margin-top: 52px;
             border-top: 1px solid rgba(77, 238, 234, 0.3);
             font-size: 0.9rem;
-            letter-spacing: 0.3px;
             color: #8f9bb5;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            backdrop-filter: blur(4px);
         }
 
-        .footer p:first-child {
-            font-weight: 500;
-            background: linear-gradient(90deg, #ffb347, #ff5e7d);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: inline-block;
-            width: fit-content;
-            margin: 0 auto;
+        @media (max-width: 768px) {
+            .main-title { font-size: 2.5rem; }
+            .subtitle { font-size: 1.1rem; }
+            .photo-container { height: 400px; }
+            .content h2 { font-size: 1.8rem; }
+            .content p { font-size: 0.95rem; }
         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ГАЛЕРЕЯ SVG 67 МЕМОВ -->
+        <div class="svg-gallery">
+            <div class="svg-card">
+                <svg width="70" height="70" viewBox="0 0 100 100">
+                    <rect width="100" height="100" rx="20" fill="black" stroke="#ff3366" stroke-width="3"/>
+                    <text x="50" y="68" font-size="55" font-weight="900" text-anchor="middle" fill="#ffcc00">67</text>
+                    <text x="25" y="28" font-size="20" fill="#ff6699">#MEME</text>
+                </svg>
+            </div>
+            <div class="svg-card">
+                <svg width="70" height="70" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="#ffaa33" stroke-width="4" stroke-dasharray="8 6"/>
+                    <text x="50" y="70" font-size="52" fill="#ff5e7d" text-anchor="middle" font-weight="bold">67</text>
+                </svg>
+            </div>
+            <div class="svg-card">
+                <svg width="70" height="70" viewBox="0 0 100 100">
+                    <polygon points="50,10 90,40 75,85 25,85 10,40" fill="#1a0000" stroke="#ff6699" stroke-width="3"/>
+                    <text x="50" y="70" font-size="48" fill="#ffdd88" text-anchor="middle">67</text>
+                </svg>
+            </div>
+            <div class="svg-card">
+                <svg width="70" height="70" viewBox="0 0 100 100">
+                    <rect x="15" y="25" width="70" height="50" rx="12" fill="none" stroke="#ff3366" stroke-width="4"/>
+                    <text x="50" y="68" font-size="50" fill="#ffcc33" text-anchor="middle">67</text>
+                </svg>
+            </div>
+            <div class="svg-card">
+                <svg width="80" height="70" viewBox="0 0 120 100">
+                    <text x="15" y="65" font-size="60" fill="#ff6699" font-weight="bold">#67</text>
+                    <circle cx="95" cy="40" r="15" fill="#ff3366"/>
+                    <text x="90" y="48" font-size="18" fill="white" text-anchor="middle">X</text>
+                </svg>
+            </div>
+        </div>
 
-        /* Дополнительный элемент — психоделический бегущий текст */
-        .marquee-meme {
-            background: rgba(0, 0, 0, 0.45);
-            border-radius: 60px;
-            padding: 10px 0;
-            margin: 20px 0 0;
-            overflow: hidden;
-            white-space: nowrap;
-            border: 1px solid rgba(255, 94, 125, 0.5);
-        }
+        <div class="photo-container">
+            <img src="1760896215294.jpg" alt="великий осеменитель" class="photo" onerror="this.src='https://placehold.co/1200x800/1a1a2e/ff3366?text=67+MEME'">
+            <div class="animated-text">
+                <h1 class="main-title">СИКС СЕВЕН</h1>
+                <div class="subtitle">КОРОЛЁВ ВЛАДИСЛАВ • ПЕРЕДОЗ 67</div>
+                <svg width="80" height="35" viewBox="0 0 100 40" style="margin: 10px auto; display: block;">
+                    <text x="10" y="28" font-size="32" fill="#ff6699" font-weight="bold">67</text>
+                    <circle cx="80" cy="18" r="9" fill="#ffcc33"/>
+                </svg>
+            </div>
+        </div>
+        
+        <div class="content">
+            <h2>🧠 АРХИВЫ БЕШЕНСТВА 6️⃣7️⃣</h2>
+            <p>МЫ ЛЕЧИМ ЛЮДЕЙ ОТ БЕШЕНСТВА — РЕЖИМ 67</p>
+            <p>ДИКИЙ ПЁС #771 — ОСЕМЕНИТЕЛЬ СОБАК И ДЕРЕВЬЕВ 12+ ЛЕТ</p>
+            <p>ЭТОТ БЕШЕНЫЙ ЭКЗЕМПЛЯР ЖИВЁТ В МЕМЕ СИКС СЕВЕН</p>
+            <p>КОРОЛЁВ ВЛАДИСЛАВ — ГЛАВНЫЙ НОСИТЕЛЬ 67 ВИРУСА</p>
+            <p>ПЕРЕДОЗИРОВКА 67 — ХАОС В КАЖДОЙ КЛЕТКЕ 🔥</p>
+        </div>
 
-        .marquee-meme span {
-            display: inline-block;
-            padding-left: 20px;
-            animation: scrollText 18s linear infinite;
-            font-weight: 700;
-            font-size: 1rem;
-            letter-spacing: 2px;
-            color: #ffdb7e;
-            text-transform: uppercase;
-        }
+        <!-- ДОПОЛНИТЕЛЬНЫЙ БЛОК С КРУПНЫМИ SVG 67 -->
+        <div style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin: 35px 0;">
+            <svg width="130" height="130" viewBox="0 0 200 200">
+                <rect width="200" height="200" fill="#0d0212" rx="30" stroke="#ff3366" stroke-width="5"/>
+                <text x="100" y="125" font-size="95" fill="#ff6699" text-anchor="middle" font-family="Impact">67</text>
+                <text x="60" y="175" fill="#ffcc66" font-size="22">MEME</text>
+            </svg>
+            <svg width="130" height="130" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="85" fill="none" stroke="#ffaa33" stroke-width="6" stroke-dasharray="10 7"/>
+                <text x="100" y="130" text-anchor="middle" fill="#ff5e7d" font-size="90" font-weight="bold">67</text>
+            </svg>
+            <svg width="130" height="130" viewBox="0 0 200 200">
+                <polygon points="100,15 185,65 155,175 45,175 15,65" fill="#13001a" stroke="#ff6699" stroke-width="4"/>
+                <text x="100" y="125" font-size="85" fill="#ffdd99" text-anchor="middle">67</text>
+            </svg>
+        </div>
 
-        @keyframes scrollText {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); }
-        }
+        <!-- БЕГУЩАЯ СТРОКА 67 -->
+        <div class="marquee-67">
+            <span>💀 67 — СИКС СЕВЕН — ПЕРЕДОЗ — КОРОЛЁВ ВЛАД — ОСЕМЕНИТЕЛЬ №771 — 67 БЕШЕНСТВО — 67 ХАОС 💀 &nbsp;&nbsp;&nbsp;⚡67⚡67⚡67⚡67⚡&nbsp;&nbsp;&nbsp;</span>
+            <span>💀 67 — СИКС СЕВЕН — ПЕРЕДОЗ — КОРОЛЁВ ВЛАД — ОСЕМЕНИТЕЛЬ №771 — 67 БЕШЕНСТВО — 67 ХАОС 💀 &nbsp;&nbsp;&nbsp;⚡67⚡67⚡67⚡67⚡&nbsp;&nbsp;&nbsp;</span>
+        </div>
 
-        /* Кнопка-счетчик (эффект интерактива) */
-        .counter-wrapper {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 20px;
-        }
-
-        .insanity-counter {
-            background: #0f1422cc;
-            backdrop-filter: blur(12px);
-            padding: 8px 20px;
-            border-radius: 60px;
-            border: 1px solid #ff5e7d;
-            font-size: 1rem;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 10
+        <div class="footer">
+            <svg width="160" height="40" viewBox="0 0 300 40" style="margin: 0 auto 10px;">
+                <text x="15" y="30" fill="#ff6699" font-size="24" font-weight="bold">© 2026 АНИМИРОВАННЫЙ ВЛАД</text>
+                <rect x="250" y="8" width="28" height="28" fill="#ff3366" rx="6"/>
+                <text x="256" y="30" font-size="20" fill="white" font-weight="bold">67</text>
+            </svg>
+            <p>ВСЕ ПРАВА ЗАЩИЩЕНЫ РЕЖИМОМ 6️⃣7️⃣ | ВЕЛИКИЙ ОСЕМЕНИТЕЛЬ</p>
+            <svg width="200" height="30" viewBox="0 0 250 30" style="margin: 8px auto;">
+                <text x="10" y="25" fill="#ffcc77" font-size="20" font-weight="bold">#67_НАВСЕГДА</text>
+                <text x="180" y="25" fill="#ff3366">🔥🔥🔥</text>
+            </svg>
+        </div>
+    </div>
+</body>
+</html>
