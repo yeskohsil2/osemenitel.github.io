@@ -2,8 +2,10 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>великий осеменитель</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>великий осеменитель | 67 inside</title>
+    <!-- Подключаем шрифты Google Fonts для более современного вида -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,800;14..32,900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,186 +14,271 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            color: white;
+            font-family: 'Inter', 'Arial', sans-serif;
+            background: radial-gradient(circle at 10% 20%, #0a0f1f, #03050b);
+            color: #f0f3fa;
             overflow-x: hidden;
+            line-height: 1.4;
+        }
+
+        /* Декоративный шум / зернистость для атмосферы */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjciIG51bU9jdGF2ZXM9IjMiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjZikiIG9wYWNpdHk9IjAuMDMiLz48L3N2Zz4=');
+            background-repeat: repeat;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.35;
         }
 
         .container {
-            max-width: 1280px;
+            max-width: 1320px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 24px 28px;
+            position: relative;
+            z-index: 2;
         }
 
+        /* Современный стеклянный эффект для карточек */
+        .glass-card {
+            background: rgba(15, 20, 35, 0.55);
+            backdrop-filter: blur(16px);
+            border-radius: 32px;
+            border: 1px solid rgba(77, 238, 234, 0.25);
+            box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        /* Фото-контейнер с кинематографичным подходом */
         .photo-container {
             position: relative;
             width: 100%;
-            height: 576px;
+            height: 620px;
+            border-radius: 36px;
             overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            margin-bottom: 30px;
+            margin-bottom: 48px;
+            box-shadow: 0 30px 45px -20px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(77, 238, 234, 0.2) inset;
+            transition: transform 0.4s ease;
+        }
+
+        .photo-container:hover {
+            transform: scale(1.01);
+            box-shadow: 0 35px 55px -18px black;
         }
 
         .photo {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), filter 0.5s;
+            filter: brightness(0.85) contrast(1.08);
         }
 
-        .photo:hover {
-            transform: scale(1.05);
+        .photo-container:hover .photo {
+            transform: scale(1.07);
+            filter: brightness(0.95) contrast(1.1);
         }
 
+        /* Текст поверх фото - более драматично */
         .animated-text {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            width: 100%;
-            padding: 20px;
-            z-index: 10;
+            width: 90%;
+            z-index: 15;
+            background: radial-gradient(ellipse at center, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.2) 80%);
+            padding: 1.6rem 2rem;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,240,0.25);
         }
 
         .main-title {
-            font-size: 4rem;
+            font-size: 5rem;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-            animation: colorChange 5s infinite alternate, glow 2s infinite alternate;
+            letter-spacing: 6px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #FFB347, #FF5E7D, #AAFFE6, #6A67CE);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradientFlow 6s ease infinite, textGlow 2.2s infinite alternate;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        /* Дополнительный безумный слоган под заголовком */
+        .main-title + .badge-67 {
+            display: inline-block;
+            background: #ff3366cc;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            backdrop-filter: blur(8px);
+            margin-top: 8px;
         }
 
         .subtitle {
-            font-size: 1.8rem;
-            font-weight: 300;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            animation: fadeInOut 3s infinite alternate;
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            opacity: 0.95;
+            animation: pulseOpacity 2.8s infinite alternate;
+            color: #eef5ff;
+            text-shadow: 0 0 8px #4deeea80;
         }
 
-        @keyframes colorChange {
-            0% {
-                color: #ff5e7d;
-            }
-            20% {
-                color: #ff8a00;
-            }
-            40% {
-                color: #ffe600;
-            }
-            60% {
-                color: #4deeea;
-            }
-            80% {
-                color: #6a67ce;
-            }
-            100% {
-                color: #ff5e7d;
-            }
+        /* Ключевые кадры */
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            }
-            to {
-                text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6);
-            }
+        @keyframes textGlow {
+            from { text-shadow: 0 0 5px rgba(255,255,200,0.4); }
+            to { text-shadow: 0 0 20px rgba(255,255,210,0.9), 0 0 12px #ff5e7d; }
         }
 
-        @keyframes fadeInOut {
-            from {
-                opacity: 0.7;
-            }
-            to {
-                opacity: 1;
-            }
+        @keyframes pulseOpacity {
+            from { opacity: 0.75; text-shadow: 0 0 0px #4deeea; }
+            to { opacity: 1; text-shadow: 0 0 12px #4deeea, 0 0 4px #fff; }
         }
 
+        /* Секция контента — карточка с кислотной обводкой */
         .content {
-            padding: 40px 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            margin-top: 30px;
-            backdrop-filter: blur(10px);
+            padding: 40px 44px;
+            margin-top: 24px;
+            background: rgba(8, 12, 25, 0.65);
+            backdrop-filter: blur(20px);
+            border-radius: 38px;
+            border: 1px solid rgba(77, 238, 234, 0.35);
+            transition: all 0.3s;
+            box-shadow: 0 20px 35px -15px rgba(0,0,0,0.5);
+        }
+
+        .content:hover {
+            border-color: #ff5e7d;
+            box-shadow: 0 25px 40px -12px rgba(255, 94, 125, 0.2);
         }
 
         .content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #4deeea;
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(125deg, #FFD966, #FF8A5C);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 28px;
+            letter-spacing: -0.5px;
+            border-left: 6px solid #4deeea;
+            padding-left: 24px;
         }
 
         .content p {
             font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 15px;
+            line-height: 1.65;
+            margin-bottom: 20px;
+            font-weight: 400;
+            color: #eef2ffdd;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
+        /* Индивидуальные иконки для абзацев — добавляем вайб */
+        .content p::before {
+            content: "⚡";
+            font-size: 1.6rem;
+            filter: drop-shadow(0 0 3px #ff5e7d);
+        }
+
+        .content p:nth-child(2)::before { content: "🐕‍🦺"; }
+        .content p:nth-child(3)::before { content: "🧠"; }
+        .content p:nth-child(4)::before { content: "🌳💦"; }
+        .content p:nth-child(5)::before { content: "📟 6️⃣7️⃣"; }
+        .content p:last-child::before { content: "👑"; }
+
+        /* Футер с анимированной линией */
         .footer {
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 32px 20px 24px;
+            margin-top: 52px;
+            border-top: 1px solid rgba(77, 238, 234, 0.3);
             font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
-        }
-        
-        @media (max-width: 768px) {
-            .main-title {
-                font-size: 2.5rem;
-            }
-            
-            .subtitle {
-                font-size: 1.3rem;
-            }
-            
-            .photo-container {
-                height: 400px;
-            }
+            letter-spacing: 0.3px;
+            color: #8f9bb5;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            backdrop-filter: blur(4px);
         }
 
-        @media (max-width: 480px) {
-            .main-title {
-                font-size: 1.8rem;
-            }
-            
-            .subtitle {
-                font-size: 1rem;
-            }
-            
-            .photo-container {
-                height: 300px;
-            }
+        .footer p:first-child {
+            font-weight: 500;
+            background: linear-gradient(90deg, #ffb347, #ff5e7d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            width: fit-content;
+            margin: 0 auto;
         }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="photo-container">
-            <img src="1760896215294.jpg" alt="Описание фото" class="photo">
-            <div class="animated-text">
-                <h1 class="main-title">Когда словил передоз 67</h1>
-            </div>
-        </div>
-        
-        <div class="content">
-            <h2>О нашем проекте</h2>
-            <p>Мы лечим людей от бешенства.</p>
-            <p>На фотографии показан дикий и бешенный пёс номер #771.</p>
-            <p>Этому осеменителю собак и деревьев более 12 лет и он все еще живет...</p>
-            <p>Это создание использует мем сикс севен на постоянной основе</p>
-            <p> Это Королёв Владислав</p>
-                </div>
-        
-        <div class="footer">
-            <p>© 2026 Анимированный влад. Все права защищены.</p>
-        </div>
-    </div>
-</body>
-</html>
+
+        /* Дополнительный элемент — психоделический бегущий текст */
+        .marquee-meme {
+            background: rgba(0, 0, 0, 0.45);
+            border-radius: 60px;
+            padding: 10px 0;
+            margin: 20px 0 0;
+            overflow: hidden;
+            white-space: nowrap;
+            border: 1px solid rgba(255, 94, 125, 0.5);
+        }
+
+        .marquee-meme span {
+            display: inline-block;
+            padding-left: 20px;
+            animation: scrollText 18s linear infinite;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            color: #ffdb7e;
+            text-transform: uppercase;
+        }
+
+        @keyframes scrollText {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Кнопка-счетчик (эффект интерактива) */
+        .counter-wrapper {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        .insanity-counter {
+            background: #0f1422cc;
+            backdrop-filter: blur(12px);
+            padding: 8px 20px;
+            border-radius: 60px;
+            border: 1px solid #ff5e7d;
+            font-size: 1rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10
