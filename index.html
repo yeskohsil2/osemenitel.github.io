@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>великий осеменитель | 67 inside</title>
+    <title>великий осеменитель | 67 ХАОС</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;800;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -36,32 +36,35 @@
         }
 
         .container {
-            max-width: 1320px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 24px 28px;
             position: relative;
             z-index: 2;
         }
 
-        /* Стиль для GIF-шапки */
+        /* Увеличенная GIF-шапка на всю ширину */
         .gif-header {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-            border-radius: 48px;
+            width: 100%;
+            margin-bottom: 40px;
+            border-radius: 32px;
             overflow: hidden;
-            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.7), 0 0 0 2px rgba(255,51,102,0.3);
-            transition: 0.3s;
+            box-shadow: 0 25px 40px -15px rgba(0,0,0,0.8), 0 0 0 2px #ff3366aa;
+            transition: 0.3s ease;
+            background: #000;
         }
         .gif-header img {
             width: 100%;
-            max-height: 160px;
+            height: auto;
+            max-height: 280px;
             object-fit: cover;
+            display: block;
             transition: 0.4s;
         }
         .gif-header:hover {
             transform: scale(1.01);
-            box-shadow: 0 25px 40px -12px #ff3366;
+            box-shadow: 0 30px 50px -12px #ff3366;
+            border-radius: 32px;
         }
 
         /* SVG галерея 67 */
@@ -72,7 +75,7 @@
             gap: 20px;
             margin-bottom: 40px;
             padding: 20px;
-            background: rgba(0,0,0,0.4);
+            background: rgba(0,0,0,0.5);
             border-radius: 60px;
             backdrop-filter: blur(8px);
             border: 1px solid #ff5e7d66;
@@ -86,8 +89,9 @@
             border: 1px solid #ff3366;
             cursor: pointer;
         }
-        .svg-card:hover { transform: scale(1.05); background: #ff336622; box-shadow: 0 0 15px #ff3366; }
+        .svg-card:hover { transform: scale(1.08); background: #ff336622; box-shadow: 0 0 18px #ff3366; }
 
+        /* Фото-контейнер — теперь без текста поверх */
         .photo-container {
             position: relative;
             width: 100%;
@@ -117,61 +121,9 @@
             filter: brightness(0.95) contrast(1.1);
         }
 
-        .animated-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            width: 90%;
-            z-index: 15;
-            background: radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.3) 80%);
-            padding: 1.6rem 2rem;
-            border-radius: 60px;
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(255,255,240,0.25);
-        }
-
-        .main-title {
-            font-size: 4.5rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 6px;
-            margin-bottom: 12px;
-            background: linear-gradient(135deg, #FFB347, #FF5E7D, #AAFFE6, #6A67CE);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: gradientFlow 6s ease infinite, textGlow 2.2s infinite alternate;
-        }
-
-        .subtitle {
-            font-size: 1.5rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-            opacity: 0.95;
-            animation: pulseOpacity 2.8s infinite alternate;
-            color: #eef5ff;
-            text-shadow: 0 0 8px #4deeea80;
-        }
-
-        @keyframes gradientFlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes textGlow {
-            from { text-shadow: 0 0 5px rgba(255,255,200,0.4); }
-            to { text-shadow: 0 0 20px rgba(255,255,210,0.9), 0 0 12px #ff5e7d; }
-        }
-
-        @keyframes pulseOpacity {
-            from { opacity: 0.75; text-shadow: 0 0 0px #4deeea; }
-            to { opacity: 1; text-shadow: 0 0 12px #4deeea, 0 0 4px #fff; }
-        }
-
+        /* ПОЛНОСТЬЮ УБРАЛИ ТЕКСТ С ФОТОГРАФИИ — никаких надписей */
+        
+        /* Секция контента — без изменений */
         .content {
             padding: 40px 44px;
             margin-top: 24px;
@@ -236,7 +188,7 @@
             padding-left: 20px;
             animation: scroll67 16s linear infinite;
             font-weight: 800;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             letter-spacing: 4px;
             color: #ffcc77;
         }
@@ -255,20 +207,21 @@
         }
 
         @media (max-width: 768px) {
-            .main-title { font-size: 2.5rem; }
-            .subtitle { font-size: 1.1rem; }
             .photo-container { height: 400px; }
             .content h2 { font-size: 1.8rem; }
             .content p { font-size: 0.95rem; }
-            .gif-header img { max-height: 100px; }
+            .gif-header img { max-height: 160px; }
+        }
+        @media (min-width: 1400px) {
+            .gif-header img { max-height: 320px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- ГИФКА ШАПКА 67 -->
+        <!-- ГИФКА НА ВСЮ ШИРИНУ, УВЕЛИЧЕННЫЙ РАЗМЕР -->
         <div class="gif-header">
-            <img src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyeWhjNWFsenM0YTAwN3B3cGZ5ZGlyeWhicDJ1Zm1kcG9kbWQzZ2hxcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dwcFlb2ovRF3amTpCi/giphy.webp" alt="67 анимация">
+            <img src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyeWhjNWFsenM0YTAwN3B3cGZ5ZGlyeWhicDJ1Zm1kcG9kbWQzZ2hxcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dwcFlb2ovRF3amTpCi/giphy.webp" alt="67 безумие">
         </div>
 
         <!-- ГАЛЕРЕЯ SVG 67 МЕМОВ -->
@@ -307,20 +260,13 @@
             </div>
         </div>
 
-        <!-- ФОТОКОНТЕЙНЕР С ОСНОВНЫМ ИЗОБРАЖЕНИЕМ -->
+        <!-- ФОТОКОНТЕЙНЕР — БЕЗ ТЕКСТА, ТОЛЬКО ИЗОБРАЖЕНИЕ -->
         <div class="photo-container">
             <img src="1760896215294.jpg" alt="великий осеменитель" class="photo" onerror="this.src='https://placehold.co/1200x800/1a1a2e/ff3366?text=67+MEME'">
-            <div class="animated-text">
-                <h1 class="main-title">СИКС СЕВЕН</h1>
-                <div class="subtitle">КОРОЛЁВ ВЛАДИСЛАВ • ПЕРЕДОЗ 67</div>
-                <svg width="80" height="35" viewBox="0 0 100 40" style="margin: 10px auto; display: block;">
-                    <text x="10" y="28" font-size="32" fill="#ff6699" font-weight="bold">67</text>
-                    <circle cx="80" cy="18" r="9" fill="#ffcc33"/>
-                </svg>
-            </div>
+            <!-- НЕТ animated-text, НЕТ НАДПИСЕЙ НА ФОТО -->
         </div>
         
-        <!-- КОНТЕНТ КАК НА ПЕРВОМ САЙТЕ -->
+        <!-- ОСНОВНОЙ КОНТЕНТ (ТЕКСТ КАК В ПЕРВОМ САЙТЕ) -->
         <div class="content">
             <h2>🧠 АРХИВЫ БЕШЕНСТВА 6️⃣7️⃣</h2>
             <p>МЫ ЛЕЧИМ ЛЮДЕЙ ОТ БЕШЕНСТВА — РЕЖИМ 67</p>
@@ -331,23 +277,23 @@
         </div>
 
         <!-- БЛОК С КРУПНЫМИ SVG 67 -->
-        <div style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin: 35px 0;">
-            <svg width="130" height="130" viewBox="0 0 200 200">
-                <rect width="200" height="200" fill="#0d0212" rx="30" stroke="#ff3366" stroke-width="5"/>
+        <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin: 40px 0;">
+            <svg width="140" height="140" viewBox="0 0 200 200">
+                <rect width="200" height="200" fill="#0d0212" rx="35" stroke="#ff3366" stroke-width="5"/>
                 <text x="100" y="125" font-size="95" fill="#ff6699" text-anchor="middle" font-family="Impact">67</text>
                 <text x="60" y="175" fill="#ffcc66" font-size="22">MEME</text>
             </svg>
-            <svg width="130" height="130" viewBox="0 0 200 200">
+            <svg width="140" height="140" viewBox="0 0 200 200">
                 <circle cx="100" cy="100" r="85" fill="none" stroke="#ffaa33" stroke-width="6" stroke-dasharray="10 7"/>
                 <text x="100" y="130" text-anchor="middle" fill="#ff5e7d" font-size="90" font-weight="bold">67</text>
             </svg>
-            <svg width="130" height="130" viewBox="0 0 200 200">
+            <svg width="140" height="140" viewBox="0 0 200 200">
                 <polygon points="100,15 185,65 155,175 45,175 15,65" fill="#13001a" stroke="#ff6699" stroke-width="4"/>
                 <text x="100" y="125" font-size="85" fill="#ffdd99" text-anchor="middle">67</text>
             </svg>
         </div>
 
-        <!-- БЕГУЩАЯ СТРОКА С МЕМАМИ -->
+        <!-- БЕГУЩАЯ СТРОКА МЕМОВ -->
         <div class="marquee-67">
             <span>💀 67 — СИКС СЕВЕН — ПЕРЕДОЗ — КОРОЛЁВ ВЛАД — ОСЕМЕНИТЕЛЬ №771 — 67 БЕШЕНСТВО — 67 ХАОС 💀 &nbsp;&nbsp;&nbsp;⚡67⚡67⚡67⚡67⚡&nbsp;&nbsp;&nbsp;</span>
             <span>💀 67 — СИКС СЕВЕН — ПЕРЕДОЗ — КОРОЛЁВ ВЛАД — ОСЕМЕНИТЕЛЬ №771 — 67 БЕШЕНСТВО — 67 ХАОС 💀 &nbsp;&nbsp;&nbsp;⚡67⚡67⚡67⚡67⚡&nbsp;&nbsp;&nbsp;</span>
@@ -355,15 +301,15 @@
 
         <!-- ФУТЕР -->
         <div class="footer">
-            <svg width="160" height="40" viewBox="0 0 300 40" style="margin: 0 auto 10px;">
-                <text x="15" y="30" fill="#ff6699" font-size="24" font-weight="bold">© 2026 АНИМИРОВАННЫЙ ВЛАД</text>
-                <rect x="250" y="8" width="28" height="28" fill="#ff3366" rx="6"/>
-                <text x="256" y="30" font-size="20" fill="white" font-weight="bold">67</text>
+            <svg width="180" height="45" viewBox="0 0 320 45" style="margin: 0 auto 12px;">
+                <text x="15" y="32" fill="#ff6699" font-size="26" font-weight="bold">© 2026 АНИМИРОВАННЫЙ ВЛАД</text>
+                <rect x="265" y="10" width="30" height="30" fill="#ff3366" rx="8"/>
+                <text x="272" y="33" font-size="22" fill="white" font-weight="bold">67</text>
             </svg>
-            <p>ВСЕ ПРАВА ЗАЩИЩЕНЫ РЕЖИМОМ 6️⃣7️⃣ | ВЕЛИКИЙ ОСЕМЕНИТЕЛЬ</p>
-            <svg width="200" height="30" viewBox="0 0 250 30" style="margin: 8px auto;">
-                <text x="10" y="25" fill="#ffcc77" font-size="20" font-weight="bold">#67_НАВСЕГДА</text>
-                <text x="180" y="25" fill="#ff3366">🔥🔥🔥</text>
+            <p style="font-size: 1rem; letter-spacing: 1px;">ВСЕ ПРАВА ЗАЩИЩЕНЫ РЕЖИМОМ 6️⃣7️⃣ | ВЕЛИКИЙ ОСЕМЕНИТЕЛЬ</p>
+            <svg width="220" height="32" viewBox="0 0 260 35" style="margin: 10px auto 0;">
+                <text x="12" y="26" fill="#ffcc77" font-size="22" font-weight="bold">#67_НАВСЕГДА</text>
+                <text x="190" y="26" fill="#ff3366">🔥🔥🔥</text>
             </svg>
         </div>
     </div>
